@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.py
+labyrinth_game/__init__.py
+labyrinth_game/main.py
+my_setup.egg-info/PKG-INFO
+my_setup.egg-info/SOURCES.txt
+my_setup.egg-info/dependency_links.txt
+my_setup.egg-info/top_level.txt
