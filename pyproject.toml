@@ -9,6 +9,18 @@ readme = "README.md"
 [tool.poetry.scripts]
 project = "labyrinth_game.main:main"
 
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.14.1"
+
+[tool.ruff]
+line-length=88
+target-version='py311'
+exclude=['venv','.venv','dist','__pycache__']
+
+[tool.ruff.lint]
+select=['E','F','I']
+ignore=[]
+
 [tool.poetry.dependencies]
 python = "^3.12"
 
