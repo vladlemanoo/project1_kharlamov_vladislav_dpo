@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from .constants import ROOMS
+from .constants import *
 from .utils import describe_current_room, solve_puzzle, attempt_open_treasure, show_help
 from .player_actions import show_inventory, get_input, move_player, take_item, use_item
 
@@ -12,19 +12,21 @@ def main():
         command=command.split()
         match command[0]:
             case 'help':
-                show_help()
+                show_help(COMMANDS)
             case 'look':
                 describe_current_room(game_state)
             case 'use':
-                use_item(game_state, command[1])
+                use_item(game_state_in, command[1])
             case 'go':
-                move_player(game_state, command[1])
+                move_player(game_state_in, command[1])
+            case 'north'|'south'|'east'|'west'|'downstairs'|'upstairs':
+                move_player(game_state_in, command[0])
             case 'take':
-                take_item(game_state, command[1])
+                take_item(game_state_in, command[1])
             case 'inventory':
-                show_inventory(game_state)
+                show_inventory(game_state_in)
             case 'solve':
-                solve_puzzle(game_state)
+                solve_puzzle(game_state_in)
             case 'quit':
                 print('Игра окончена')
                 game_state['game_over']=True
