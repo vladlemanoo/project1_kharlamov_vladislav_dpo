@@ -16,3 +16,5 @@
 1. Скачать репозиторий.
 2. Установить зависимости (через - poetry install).
 3. Запустить игру командой poetry run project
+
+https://asciinema.org/a/bJbUA5cBoh6oBF6B78bLVQlsD - ссылка на запись
