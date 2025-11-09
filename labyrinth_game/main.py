@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-from .constants import *
-from .utils import describe_current_room, solve_puzzle, attempt_open_treasure, show_help
+from .constants import ROOMS, COMMANDS
+from .utils import describe_current_room, solve_puzzle, attempt_open_treasure, show_help, pseudo_random, trigger_trap, random_event
 from .player_actions import show_inventory, get_input, move_player, take_item, use_item
 
 def main():
@@ -34,11 +34,11 @@ def main():
                 print('Неизвестная команда. Попробуйте снова, для получения списка команд введите help')
                 
 
-    while game_state['game_over']!=True:
+    while game_state['game_over'] is not True:
         process_command(game_state, get_input())        
     
 if __name__=="__main__":
-    main()
+   main()
     
 game_state={
     'player_inventory':[],
@@ -47,4 +47,4 @@ game_state={
     'steps_taken':0
 }
 
-main()
+#main()

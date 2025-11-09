@@ -1,11 +1,10 @@
-from .constants import ROOMS
-from .utils import *
+from .constants import ROOMS, COMMANDS
+from .utils import describe_current_room, solve_puzzle, attempt_open_treasure, show_help, pseudo_random, trigger_trap, random_event
 def show_inventory(game_state_in):
-    if len(game_state_in['player_inventory'])==0:
+    if len(game_state_in["player_inventory"])==0:
         print('Инвентарь пуст')
     else:
-        print(type(game_state_in['player_inventory']), game_state_in['player_inventory'])
-        print(f'В инвентаре есть: - {', '.join(game_state_in['player_inventory'])}')
+        print(f'В инвентаре есть: - {", ".join(game_state_in["player_inventory"])}')
 
 def get_input(prompt="> "):
     try:
@@ -40,7 +39,8 @@ def take_item(game_state_in, item_name):
         game_state_in['player_inventory'].append(item_name)
         ROOMS[game_state_in['current_room']]['items'].remove(item_name)
         print(f"Вы подняли: {item_name}")
-    else: print("Такого предмета здесь нет")
+    else: 
+        print("Такого предмета здесь нет")
 
 def use_item(game_state_in, item_name):
     if item_name in game_state_in['player_inventory']:
@@ -55,4 +55,5 @@ def use_item(game_state_in, item_name):
                     game_state_in['player_inventory'].append('rusty_key')
             case _:
                 print('Неясно как использовать этот предмет')
-    else: print('У вас нет такого предмета')
+    else: 
+        print('У вас нет такого предмета')

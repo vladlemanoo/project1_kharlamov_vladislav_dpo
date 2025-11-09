@@ -39,7 +39,7 @@ ROOMS = {
     'kitchen': {
         'description': 'Кухня, где есть ящик с неизвестным содержимым и люком в подземелье',
         'exits': {'east':'treasure_room','downstairs':'basement'},
-        'items': ['Golden Cookie'],
+        'items': ['treasure_key'],
         'puzzle': ('На сундуке пароль. Введите код (подсказка: Номер приказа из Звездных Войн, 6*11= ? )', '66')
     },
     'basement': {
